@@ -142,6 +142,30 @@ namespace TraderShips
                 icon = SendAwayTexture,
             };
 
+            if (Prefs.DevMode)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "Dev: randomize sprite",
+                    action = delegate ()
+                    {
+                        Color color = sprite.color;
+                        sprite = Props.shipgen.CreateSprite();
+                        sprite.color = color;
+                        sprite.FinishCreating();
+                    },
+                };
+                yield return new Command_Action
+                {
+                    defaultLabel = "Dev: randomize color",
+                    action = delegate ()
+                    {
+                        sprite.color = ShipSprite.RandomColor();
+                        sprite.FinishCreating();
+                    },
+                };
+            }
+
             yield break;
         }
 

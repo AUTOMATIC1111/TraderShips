@@ -12,6 +12,7 @@ namespace TraderShips
     public class TraderShipsSettings : ModSettings
     {
         public bool disableOrbital = true;
+        public bool colors = true;
 
         override public void ExposeData()
         {
@@ -22,7 +23,8 @@ namespace TraderShips
         {
             Listing_Standard listing_Standard = new Listing_Standard();
             listing_Standard.Begin(inRect);
-            listing_Standard.CheckboxLabeled("TradeShipsDisableOrbitalName".Translate(), ref disableOrbital, "TradeShipsDisableOrbitalDesc".Translate());
+            listing_Standard.CheckboxLabeled("TraderShipsDisableOrbitalName".Translate(), ref disableOrbital, "TraderShipsDisableOrbitalDesc".Translate());
+            listing_Standard.CheckboxLabeled("TraderShipsColorsName".Translate(), ref colors, "TraderShipsColorsDesc".Translate());
             listing_Standard.End();
         }
     }

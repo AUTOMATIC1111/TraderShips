@@ -10,6 +10,12 @@ namespace TraderShips
 {
     class IncidentWorkerTraderShip : IncidentWorker
     {
+
+        protected override bool CanFireNowSub(IncidentParms parms)
+        {
+            return !TraderShips.settings.disableOrbital;
+        }
+
         public static bool FindAnyLandingSpot(out IntVec3 spot, Faction faction, Map map, IntVec2? size)
         {
             if (!DropCellFinder.FindSafeLandingSpot(out spot, faction, map, 0, 15, 25, size))
@@ -58,6 +64,11 @@ namespace TraderShips
                     spot = s;
                 }
             }
+        }
+
+        public bool TryExecuteWorkerPub(IncidentParms parms)
+        {
+            return TryExecuteWorker(parms);
         }
 
         protected override bool TryExecuteWorker(IncidentParms parms)

@@ -15,6 +15,7 @@ namespace TraderShips
         public float angle;
         public float distance;
         public int layer;
+        public Graphic graphic;
 
         public void ExposeData()
         {

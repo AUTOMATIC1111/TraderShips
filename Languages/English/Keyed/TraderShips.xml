@@ -10,7 +10,9 @@
   <TraderShipsCrash>A trade ship previously known as {0} has crashed nearby.\n\nThey were a {1}.\n\nSome of their stock is scattered around.</TraderShipsCrash>
   <TraderShipsLeavingDueToDamage>{0} is leaving because of damage to the ship.</TraderShipsLeavingDueToDamage>
   
-  <TradeShipsDisableOrbitalName>Disable orbital traders</TradeShipsDisableOrbitalName>
-  <TradeShipsDisableOrbitalDesc>Prevent orbital traders from appearing (trade ships will still come as long as this mod is active).</TradeShipsDisableOrbitalDesc>
+  <TraderShipsDisableOrbitalName>Disable orbital traders</TraderShipsDisableOrbitalName>
+  <TraderShipsDisableOrbitalDesc>Prevent orbital traders from appearing (trade ships will still come as long as this mod is active).</TraderShipsDisableOrbitalDesc>
+  <TraderShipsColorsName>Colored ships</TraderShipsColorsName>
+  <TraderShipsColorsDesc>Allow ships to have different colors.</TraderShipsColorsDesc>
 
 </LanguageData>

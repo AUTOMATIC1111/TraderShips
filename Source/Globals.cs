@@ -14,5 +14,6 @@ namespace TraderShips
         public static JobDef TraderShipsTradeWithShip;
         public static ThingDef TraderShipsShip;
         public static ThingDef TraderShipsShipCrashing;
+        public static IncidentDef TraderShipsArrival;
     }
 }

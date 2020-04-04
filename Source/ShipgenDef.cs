@@ -29,6 +29,11 @@ namespace TraderShips
             {
                 step.Apply(state, sprite);
             }
+
+            if (TraderShips.settings.colors)
+            {
+                sprite.color = ShipSprite.RandomColor();
+            }
         }
     }
 }
