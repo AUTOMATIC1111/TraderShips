@@ -15,4 +15,14 @@
   <TraderShipsColorsName>Colored ships</TraderShipsColorsName>
   <TraderShipsColorsDesc>Allow ships to have different colors.</TraderShipsColorsDesc>
 
+  <TraderShipsLandingZone>Landing zone</TraderShipsLandingZone>
+  <TraderShipsLandingZoneExpandName>Expand landing zone</TraderShipsLandingZoneExpandName>
+  <TraderShipsLandingZoneExpandName>Expand landing zone</TraderShipsLandingZoneExpandName>
+  <TraderShipsLandingZoneExpandDesc>Create an area that will be preferred as a landing zone by space ships. A ship will try to land in the middle of a landing zone, so if you want a large landing pad with multiple ships on it, designate multiple non-intersecting zones.</TraderShipsLandingZoneExpandDesc>
+  <TraderShipsLandingZoneClearName>Clear landing zone</TraderShipsLandingZoneClearName>
+  <TraderShipsLandingZoneClearDesc>Remove landing zone area, making space ships choose where to land themselves.</TraderShipsLandingZoneClearDesc>
+
+  <TraderShipsLandingZoneBlocked>Space ship could not land on landing zone: {0}.</TraderShipsLandingZoneBlocked>
+  <TraderShipsBlockedBy>blocked by {0_label}</TraderShipsBlockedBy>
+
 </LanguageData>

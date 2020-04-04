@@ -43,6 +43,7 @@ namespace TraderShips
             if (count == 0)
             {
                 FindAnyLandingSpot(out spot, faction, map, size);
+                return;
             }
 
             center.x /= count;
@@ -83,9 +84,15 @@ namespace TraderShips
             CompShip comp = ship.TryGetComp<CompShip>();
             comp.GenerateInternalTradeShip(map, traderKindDef);
 
-            if (ThingDefOf.ShipLandingBeacon != null && !DropCellFinder.TryFindShipLandingArea(map, out center, out blockingThing) && blockingThing != null)
+            Area_LandingZone lz = map.areaManager.LandingZone();
+            if (lz != null && !lz.TryFindShipLandingArea(ship.def.size, out center, out blockingThing) && blockingThing != null)
             {
-                Messages.Message("ShuttleBlocked".Translate("BlockedBy".Translate(blockingThing).CapitalizeFirst()), blockingThing, MessageTypeDefOf.NeutralEvent, true);
+                Messages.Message("TraderShipsLandingZoneBlocked".Translate("TraderShipsBlockedBy".Translate(blockingThing)), blockingThing, MessageTypeDefOf.NeutralEvent, true);
+            }
+
+            if (!center.IsValid && ThingDefOf.ShipLandingBeacon != null && !DropCellFinder.TryFindShipLandingArea(map, out center, out blockingThing) && blockingThing != null)
+            {
+                Messages.Message("TraderShipsLandingZoneBlocked".Translate("TraderShipsBlockedBy".Translate(blockingThing)), blockingThing, MessageTypeDefOf.NeutralEvent, true);
             }
 
             if (!center.IsValid)

@@ -36,17 +36,6 @@ namespace TraderShips
         public static Color RandomColor()
         {
             return Color.HSVToRGB(Rand.Value, Mathf.Clamp(Rand.Value*1.5f-0.5f, 0f, 1f), 0.5f + Rand.Value * 0.5f);
-            /**
-            Color color = new Color(0f, 0f, 0f);
-
-            while (true)
-            {
-                color.r = Rand.Value;
-                color.g = Rand.Value;
-                color.b = Rand.Value;
-                if (color.r + color.g + color.b >= 0.75f) return color;
-            }*/
-
         }
 
         public void FinishCreating()

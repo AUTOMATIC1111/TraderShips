@@ -321,10 +321,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area\Area_LandingZone.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="CompPropertiesShip.cs" />
     <Compile Include="CompShip.cs" />
     <Compile Include="Debug.cs" />
+    <Compile Include="Area\Designator_AreaLandingZone.cs" />
+    <Compile Include="Area\Designator_AreaLandingZoneClear.cs" />
+    <Compile Include="Area\Designator_AreaLandingZoneExpand.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="IncidentWorkerTraderShip.cs" />
     <Compile Include="IncidentWorkerTraderShipCrash.cs" />
@@ -361,7 +365,7 @@
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="None.None.Increment.TimeStamp" BuildVersion_StartDate="2000/1/1" />
+      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_BuildVersioningStyle="None.None.Increment.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

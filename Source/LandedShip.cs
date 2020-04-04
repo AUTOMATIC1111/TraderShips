@@ -37,6 +37,11 @@ namespace TraderShips
             }
         }
 
+        public override void Depart()
+        {
+            
+        }
+
         public new void GiveSoldThingToPlayer(Thing toGive, int countToGive, Pawn playerNegotiator)
         {
             Thing thing = toGive.SplitOff(countToGive);

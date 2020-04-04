@@ -54,10 +54,15 @@ namespace TraderShips
 
         public override void CompTick()
         {
-            tradeShip.PassingShipTick();
+            if (tradeShip.Departed)
+            {
+                if (parent.Spawned) SendAway();
+            }
+            else
+            {
+                tradeShip.PassingShipTick();
+            }
 
-            if (tradeShip.Departed && parent.Spawned)
-                SendAway();
         }
 
         public override string CompInspectStringExtra()
@@ -81,7 +86,7 @@ namespace TraderShips
 
         public override string TransformLabel(string label)
         {
-            return tradeShip.def.LabelCap;
+            return tradeShip.name;
         }
 
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
@@ -223,7 +228,7 @@ namespace TraderShips
                     Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(Props.crashPilotKind, tradeShip.Faction));
                     GenPlace.TryPlaceThing(pawn, RandomNearby(loc), map, ThingPlaceMode.Near);
                     pawn.TakeDamage(new DamageInfo(DamageDefOf.Bomb, 250, 0, -1, parent));
-                    if(! pawn.Dead) HealthUtility.DamageUntilDowned(pawn);
+                    if (!pawn.Dead) HealthUtility.DamageUntilDowned(pawn);
                 }
             }
 
