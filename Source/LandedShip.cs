@@ -11,8 +11,8 @@ namespace TraderShips
         Map map;
 
         public LandedShip()
-        { 
-        
+        {
+
         }
         public LandedShip(Map map, TraderKindDef def, Faction faction = null) : base(def, faction)
         {
@@ -39,7 +39,7 @@ namespace TraderShips
 
         public override void Depart()
         {
-            
+
         }
 
         public new void GiveSoldThingToPlayer(Thing toGive, int countToGive, Pawn playerNegotiator)
@@ -47,7 +47,7 @@ namespace TraderShips
             Thing thing = toGive.SplitOff(countToGive);
             thing.PreTraded(TradeAction.PlayerBuys, playerNegotiator, this);
 
-            if (! GenPlace.TryPlaceThing(thing, playerNegotiator.Position, Map, ThingPlaceMode.Near))
+            if (!GenPlace.TryPlaceThing(thing, playerNegotiator.Position, Map, ThingPlaceMode.Near))
             {
                 Log.Error(string.Concat(new object[]
                 {
@@ -61,27 +61,17 @@ namespace TraderShips
         }
 
 
-        public new IEnumerable<Thing> ColonyThingsWillingToBuy(Pawn playerNegotiator) {
-            IEnumerable<Thing> enumerable = from x in Map.listerThings.AllThings
-                                            where x.def.category == ThingCategory.Item && TradeUtility.PlayerSellableNow(x, this) && !x.Position.Fogged(x.Map) && (Map.areaManager.Home[x.Position] || x.IsInAnyStorage()) && ReachableForTrade(playerNegotiator, x)
-                                            select x;
-            foreach (Thing thing in enumerable)
-
+        public new IEnumerable<Thing> ColonyThingsWillingToBuy(Pawn playerNegotiator)
+        {
+            // technically, this is pawn selling things to itself, but the code doesn't seem to care, and
+            // using this method instead of just listing all things allows for compatibility with storage
+            // mods that patch Pawn_TraderTracker.ColonyThingsWillingToBuy.
+            foreach (Thing thing in new Pawn_TraderTracker(playerNegotiator).ColonyThingsWillingToBuy(playerNegotiator))
             {
                 yield return thing;
             }
 
-            foreach (Pawn pawn in from x in TradeUtility.AllSellableColonyPawns(Map) where !x.Downed && ReachableForTrade(playerNegotiator, x) select x)
-            {
-                yield return pawn;
-            }
             yield break;
         }
-
-        private bool ReachableForTrade(Pawn seller, Thing thing)
-        {
-            return Map == thing.Map && Map.reachability.CanReach(seller.Position, thing, PathEndMode.Touch, TraverseMode.PassDoors, Danger.Some);
-        }
-
     }
 }
