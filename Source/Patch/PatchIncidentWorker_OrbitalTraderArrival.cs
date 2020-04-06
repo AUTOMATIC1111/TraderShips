@@ -11,11 +11,11 @@ namespace TraderShips.Patch
     [HarmonyPatch(typeof(IncidentWorker_OrbitalTraderArrival), "CanFireNowSub")]
     class PatchIncidentWorker_OrbitalTraderArrivalCanFireNowSub
     {
-        public static bool Prefix(ref bool __result)
+        public static bool Prefix(ref bool __result, IncidentParms parms)
         {
             if (TraderShips.settings.disableOrbital)
             {
-                __result = true;
+                __result = (Globals.TraderShipsArrival.Worker as IncidentWorkerTraderShip).IsAllowed(parms);
                 return false;
             }
 

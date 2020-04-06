@@ -13,10 +13,13 @@ namespace TraderShips
     {
         public bool disableOrbital = true;
         public bool colors = true;
+        public bool requireCommsConsole = false;
 
         override public void ExposeData()
         {
             Scribe_Values.Look(ref disableOrbital, "disableOrbital");
+            Scribe_Values.Look(ref colors, "colors");
+            Scribe_Values.Look(ref requireCommsConsole, "requireCommsConsole");
         }
 
         public void DoSettingsWindowContents(Rect inRect)
@@ -25,6 +28,7 @@ namespace TraderShips
             listing_Standard.Begin(inRect);
             listing_Standard.CheckboxLabeled("TraderShipsDisableOrbitalName".Translate(), ref disableOrbital, "TraderShipsDisableOrbitalDesc".Translate());
             listing_Standard.CheckboxLabeled("TraderShipsColorsName".Translate(), ref colors, "TraderShipsColorsDesc".Translate());
+            listing_Standard.CheckboxLabeled("TraderShipsRequireCommssConsoleName".Translate(), ref requireCommsConsole, "TraderShipsRequireCommssConsoleDesc".Translate());
             listing_Standard.End();
         }
     }

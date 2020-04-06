@@ -10,10 +10,21 @@ namespace TraderShips
 {
     class IncidentWorkerTraderShip : IncidentWorker
     {
+        bool HaveConsole(Map map)
+        {
+            return map.listerBuildings.allBuildingsColonist.Any((Building b) => b.def.IsCommsConsole && (b.GetComp<CompPowerTrader>() == null || b.GetComp<CompPowerTrader>().PowerOn));
+        }
+
+        public bool IsAllowed(IncidentParms parms)
+        {
+            if (TraderShips.settings.requireCommsConsole && !HaveConsole((Map)parms.target)) return false;
+
+            return true;
+        }
 
         protected override bool CanFireNowSub(IncidentParms parms)
         {
-            return !TraderShips.settings.disableOrbital;
+            return !TraderShips.settings.disableOrbital && IsAllowed(parms);
         }
 
         public static bool FindAnyLandingSpot(out IntVec3 spot, Faction faction, Map map, IntVec2? size)
