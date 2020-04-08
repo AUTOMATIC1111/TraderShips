@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <TraderShipsTitle>naves comerciantes</TraderShipsTitle>
+  
+  <TraderShipsSendAway>Echar</TraderShipsSendAway>
+  <TraderShipsSendAwayDesc>Pide al comerciante que se vaya.</TraderShipsSendAwayDesc>
+  <TraderShipsLeavingIn>Dejando en: {0}</TraderShipsLeavingIn>
+  <TraderShipsArrival>Una nave comercial ha aterrizado cerca.\n\nEllos son conocidos como {0}. Ellos son un {1}.\n\n{2}</TraderShipsArrival>
+  <TraderShipsCrashName>Nave de comercio se estrelló</TraderShipsCrashName>
+  <TraderShipsCrash>Una nave comercial anteriormente conocida como {0} se ha estrellado cerca.\n\nEllos eran un {1}.\n\nAlgunas de sus existencias se encuentran dispersas.</TraderShipsCrash>
+  <TraderShipsLeavingDueToDamage>{0} se va por daños en la nave.</TraderShipsLeavingDueToDamage>
+  
+  <TraderShipsDisableOrbitalName>Deshabilitar comerciantes orbitales</TraderShipsDisableOrbitalName>
+  <TraderShipsDisableOrbitalDesc>Evita que aparezcan los comerciantes orbitales (las naves comerciales seguirán existiendo mientras este mod esté activo).</TraderShipsDisableOrbitalDesc>
+  <TraderShipsColorsName>Naves de colores</TraderShipsColorsName>
+  <TraderShipsColorsDesc>Permitir que las naves tengan diferentes colores.</TraderShipsColorsDesc>
+
+  <TraderShipsLandingZone>Zona de aterrizaje</TraderShipsLandingZone>
+  <TraderShipsLandingZoneExpandName>Ampliar zona de aterrizaje</TraderShipsLandingZoneExpandName>
+  <TraderShipsLandingZoneExpandName>Ampliar zona de aterrizaje</TraderShipsLandingZoneExpandName>
+  <TraderShipsLandingZoneExpandDesc>Crea un área que las naves espaciales prefieran como zona de aterrizaje. Una nave intentará aterrizar en el medio de una zona de aterrizaje, por lo que si desea una plataforma de aterrizaje grande con varias naves, designe múltiples zonas que no se crucen.</TraderShipsLandingZoneExpandDesc>
+  <TraderShipsLandingZoneClearName>Eliminar zona de aterrizaje</TraderShipsLandingZoneClearName>
+  <TraderShipsLandingZoneClearDesc>Eliminar el área de la zona de aterrizaje, haciendo que las naves espaciales elijan dónde aterrizar.</TraderShipsLandingZoneClearDesc>
+
+  <TraderShipsLandingZoneBlocked>La nave espacial no pudo aterrizar en la zona de aterrizaje: {0}.</TraderShipsLandingZoneBlocked>
+  <TraderShipsBlockedBy>bloqueado por {0_label}</TraderShipsBlockedBy>
+
+</LanguageData>
