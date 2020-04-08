@@ -20,7 +20,7 @@
       <li>Map_PlayerHome</li>
     </targetTags>
     <workerClass>TraderShips.IncidentWorkerTraderShipCrash</workerClass>
-    <category>OrbitalVisitor</category>
+    <category>Misc</category>
     <baseChance>0.045</baseChance>
   </IncidentDef>
 
