@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>TraderShipsTradeRequest</defName>
+    <rootSelectionWeight>1.5</rootSelectionWeight>
+    <expireDaysRange>4~6</expireDaysRange>
+    <rootMinPoints>0</rootMinPoints>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[special] [trade] [requester_label]</li>
+        <li>special->A Special</li>
+        <li>special->A Unique</li>
+        <li>special->A Non-traditional</li>
+        <li>special->An Unconventional</li>
+        <li>special->An Unexpected</li>
+        <li>special->A Puzzling</li>
+        <li>special->An Interesting And Exciting New Shiny</li>
+        <li>trade->Sale to</li>
+        <li>trade->Delivery to</li>
+        <li>trade->Trade with</li>
+        <li>trade->Exchange with</li>
+        <li>trade->Deal with</li>
+        <li>trade->Offer from</li>
+        <li>trade->Business Exchange with</li>
+        <li>trade->Arrangement with</li>
+        <li>trade->Transaction with</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A trader ship temporarily stationed nearby, [requester_label], has a special trade request. They would like to purchase:
+\n  [requestedThingCount]x [requestedThing_label] [qualityInfo](worth [requestedThingMarketValue_money])
+\nIn return, [allRewardsDescriptions]
+\nIf you want to make the trade, accept the quest, and the ship will land. You will have about one day to deliver requested items.</li>
+        <li>qualityInfo(requestedThingHasQuality==True,priority=1)->of normal+ quality </li>
+        <li>qualityInfo-></li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="TraderShips.Quest.QuestNode_CreateTraderShip">
+          <storeAs>requester</storeAs>
+        </li>
+
+        <li Class="QuestNode_TradeRequest_GetRequestedThing">
+          <storeThingAs>requestedThing</storeThingAs>
+          <storeThingCountAs>requestedThingCount</storeThingCountAs>
+          <storeMarketValueAs>requestedThingMarketValue</storeMarketValueAs>
+          <storeHasQualityAs>requestedThingHasQuality</storeHasQualityAs>
+        </li>
+        
+        <li Class="TraderShips.Quest.QuestNode_ShipsTradeRequest_Initiate">
+          <requester>$requester</requester>
+          <requestedThingDef>$requestedThing</requestedThingDef>
+          <requestedThingCount>$requestedThingCount</requestedThingCount>
+        </li>
+
+        <!-- Rewards -->
+        <li Class="QuestNode_GetMapWealth">
+          <map>$map</map>
+          <storeAs>mapWealth</storeAs>
+        </li>
+        <li Class="QuestNode_EvaluateSimpleCurve">
+          <value>$mapWealth</value>
+          <storeAs>wealthRewardValueFactor</storeAs>
+          <curve>
+            <points>
+              <li>0, 1.15</li>
+              <li>50000, 1</li>
+              <li>300000, 0.85</li>
+            </points>
+          </curve>
+        </li>
+        <li Class="QuestNode_Set">
+          <name>rewardValue</name>
+          <value>$($requestedThingMarketValue * $wealthRewardValueFactor * randFloat(1.5, 2.1))</value>
+        </li>
+
+        <li Class="QuestNode_Equal">
+          <value1>$requestedThing</value1>
+          <value2>Leather_Human</value2>
+          <node Class="QuestNode_Multiply">
+            <value1>$rewardValue</value1>
+            <value2>1.7</value2>
+            <storeAs>rewardValue</storeAs>
+          </node>
+        </li>
+
+        <li Class="QuestNode_GiveRewards">
+          <inSignal>requester.TradeRequestFulfilled</inSignal>
+          <parms>
+            <allowGoodwill>true</allowGoodwill>
+            <allowRoyalFavor>true</allowRoyalFavor>
+            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+            <disallowedThingDefs>
+              <li>$requestedThing</li>
+            </disallowedThingDefs>
+          </parms>
+          <useDifficultyFactor>false</useDifficultyFactor> <!-- we only care about requested total market value -->
+          <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+            <letterDef>ChoosePawn</letterDef>
+            <label>[asker_faction_royalFavorLabel]</label>
+            <text>Who should be credited with [asker_faction_royalFavorLabel] for fulfilling the trade request?</text>
+            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+            <useColonistsFromCaravanArg>true</useColonistsFromCaravanArg>
+          </nodeIfChosenPawnSignalUsed>
+        </li>
+
+        <!-- End conditions -->
+        <li Class="QuestNode_End">
+          <inSignal>requester.TradeRequestFulfilled</inSignal>
+          <outcome>Success</outcome>
+          <sendStandardLetter>true</sendStandardLetter>
+        </li>
+
+        <li Class="QuestNode_End">
+            <inSignal>requester.Despawned</inSignal>
+            <outcome>Fail</outcome>
+            <sendStandardLetter>true</sendStandardLetter>
+        </li>
+        
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

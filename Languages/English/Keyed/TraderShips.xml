@@ -16,6 +16,8 @@
   <TraderShipsColorsDesc>Allow ships to have different colors.</TraderShipsColorsDesc>
   <TraderShipsRequireCommssConsoleName>Require comms console</TraderShipsRequireCommssConsoleName>
   <TraderShipsRequireCommssConsoleDesc>Ships won't come unless you have a comms console.</TraderShipsRequireCommssConsoleDesc>
+  <TraderShipsEnableQuestsName>Enable quests</TraderShipsEnableQuestsName>
+  <TraderShipsEnableQuestsDesc>Enable trade ship-related quests.</TraderShipsEnableQuestsDesc>
 
   <TraderShipsLandingZone>Landing zone</TraderShipsLandingZone>
   <TraderShipsLandingZoneExpandName>Expand landing zone</TraderShipsLandingZoneExpandName>
@@ -27,6 +29,6 @@
   <TraderShipsLandingZoneBlocked>Space ship could not land on landing zone: {0}.</TraderShipsLandingZoneBlocked>
   <TraderShipsBlockedBy>blocked by {0_label}</TraderShipsBlockedBy>
 
-
+  <TraderShipsQuestRequestInfo>Requesting: {0} ({1})</TraderShipsQuestRequestInfo>
 
 </LanguageData>

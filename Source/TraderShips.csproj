@@ -335,6 +335,9 @@
     <Compile Include="JobDriverTradeWithShip.cs" />
     <Compile Include="LandedShip.cs" />
     <Compile Include="Patch\PatchIncidentWorker_OrbitalTraderArrival.cs" />
+    <Compile Include="Quest\QuestNode_CreateTraderShip.cs" />
+    <Compile Include="Quest\QuestNode_ShipsTradeRequest_Initiate.cs" />
+    <Compile Include="Quest\QuestPart_InitiateShipsTradeRequest.cs" />
     <Compile Include="ShipgenDef.cs" />
     <Compile Include="ShipgenState.cs" />
     <Compile Include="ShipgenStep.cs" />
@@ -365,7 +368,7 @@
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_BuildVersioningStyle="None.None.Increment.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" />
+      <UserProperties BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="None.None.Increment.TimeStamp" BuildVersion_StartDate="2000/1/1" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

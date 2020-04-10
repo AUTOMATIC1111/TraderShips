@@ -77,23 +77,22 @@ namespace TraderShips
                 }
             }
         }
-
-        public bool TryExecuteWorkerPub(IncidentParms parms)
+        public static Thing MakeTraderShip(Map map)
         {
-            return TryExecuteWorker(parms);
-        }
-
-        protected override bool TryExecuteWorker(IncidentParms parms)
-        {
-            Map map = (Map)parms.target;
-            Thing blockingThing;
-            IntVec3 center = IntVec3.Invalid;
             Thing ship = ThingMaker.MakeThing(Globals.TraderShipsShip, null);
             TraderKindDef traderKindDef = (from x in DefDatabase<TraderKindDef>.AllDefs where CanSpawn(map, x) select x).RandomElementByWeightWithFallback((TraderKindDef traderDef) => traderDef.CalculatedCommonality);
             if (traderKindDef == null) throw new InvalidOperationException();
 
             CompShip comp = ship.TryGetComp<CompShip>();
             comp.GenerateInternalTradeShip(map, traderKindDef);
+            return ship;
+        }
+
+        public static void LandShip(Map map, Thing ship)
+        {
+            Thing blockingThing;
+            IntVec3 center = IntVec3.Invalid;
+            CompShip comp = ship.TryGetComp<CompShip>();
 
             Area_LandingZone lz = map.areaManager.LandingZone();
             if (lz != null && !lz.TryFindShipLandingArea(ship.def.size, out center, out blockingThing) && blockingThing != null)
@@ -112,16 +111,30 @@ namespace TraderShips
             }
 
             GenPlace.TryPlaceThing(SkyfallerMaker.MakeSkyfaller(comp.Props.landAnimation, ship), center, map, ThingPlaceMode.Near);
+        }
+
+        public bool TryExecuteWorkerPub(IncidentParms parms)
+        {
+            return TryExecuteWorker(parms);
+        }
+
+        protected override bool TryExecuteWorker(IncidentParms parms)
+        {
+            Map map = (Map)parms.target;
+            Thing ship = MakeTraderShip(map);
+
+            LandShip(map, ship);
+
             return true;
         }
 
-        protected Faction GetFaction(TraderKindDef trader)
+        protected static Faction GetFaction(TraderKindDef trader)
         {
             if (trader.faction == null) return null;
             return (from f in Find.FactionManager.AllFactions where f.def == trader.faction select f).RandomElementWithFallback();
         }
 
-        protected bool CanSpawn(Map map, TraderKindDef trader)
+        protected static bool CanSpawn(Map map, TraderKindDef trader)
         {
             if (!trader.orbital)
             {

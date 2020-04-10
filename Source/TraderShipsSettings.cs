@@ -14,12 +14,14 @@ namespace TraderShips
         public bool disableOrbital = true;
         public bool colors = true;
         public bool requireCommsConsole = false;
+        public bool enableQuests = true;
 
         override public void ExposeData()
         {
             Scribe_Values.Look(ref disableOrbital, "disableOrbital");
             Scribe_Values.Look(ref colors, "colors");
             Scribe_Values.Look(ref requireCommsConsole, "requireCommsConsole");
+            Scribe_Values.Look(ref enableQuests, "enableQuests");
         }
 
         public void DoSettingsWindowContents(Rect inRect)
@@ -29,6 +31,7 @@ namespace TraderShips
             listing_Standard.CheckboxLabeled("TraderShipsDisableOrbitalName".Translate(), ref disableOrbital, "TraderShipsDisableOrbitalDesc".Translate());
             listing_Standard.CheckboxLabeled("TraderShipsColorsName".Translate(), ref colors, "TraderShipsColorsDesc".Translate());
             listing_Standard.CheckboxLabeled("TraderShipsRequireCommssConsoleName".Translate(), ref requireCommsConsole, "TraderShipsRequireCommssConsoleDesc".Translate());
+            listing_Standard.CheckboxLabeled("TraderShipsEnableQuestsName".Translate(), ref enableQuests, "TraderShipsEnableQuestsDesc".Translate());
             listing_Standard.End();
         }
     }

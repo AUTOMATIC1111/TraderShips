@@ -1,9 +1,11 @@
 ﻿using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TraderShips.Quest;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -18,6 +20,7 @@ namespace TraderShips
         public CompPropertiesShip Props => props as CompPropertiesShip;
         public LandedShip tradeShip;
         public bool mustCrash = false;
+        public QuestPart_ShipsTradeRequest tradeRequest;
 
         ShipSprite sprite;
 
@@ -43,6 +46,7 @@ namespace TraderShips
             Scribe_Deep.Look(ref sprite, "shipSprite");
             Scribe_Deep.Look(ref tradeShip, "ship");
             Scribe_Values.Look(ref mustCrash, "mustCrash");
+            Scribe_Deep.Look(ref tradeRequest, "tradeRequest");
         }
 
         public override void PostDraw()
@@ -67,10 +71,18 @@ namespace TraderShips
 
         public override string CompInspectStringExtra()
         {
-            return
+            string res =
                 tradeShip.def.LabelCap + "\n" +
                 "TraderShipsLeavingIn".Translate(GenDate.ToStringTicksToPeriod(tradeShip.ticksUntilDeparture));
+
+            if (tradeRequest != null)
+            {
+                res += "\n" + "TraderShipsQuestRequestInfo".Translate(TradeRequestUtility.RequestedThingLabel(tradeRequest.requestedThingDef, tradeRequest.requestedCount).CapitalizeFirst(), (tradeRequest.requestedThingDef.GetStatValueAbstract(StatDefOf.MarketValue, null) * (float)tradeRequest.requestedCount).ToStringMoney(null));
+            }
+
+            return res;
         }
+
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -137,6 +149,15 @@ namespace TraderShips
             tradeShip.GenerateThings();
         }
 
+
+        private void FulfillTradeRequest()
+        {
+            tradeRequest.FulfillRequest(tradeShip);
+
+            QuestUtility.SendQuestTargetSignals(parent.questTags, "TradeRequestFulfilled", parent.Named("SUBJECT"));
+            tradeRequest = null;
+        }
+
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             yield return new Command_Action
@@ -146,6 +167,34 @@ namespace TraderShips
                 action = new Action(SendAway),
                 icon = SendAwayTexture,
             };
+
+            if (tradeRequest != null)
+            {
+                Command_Action command_Action = new Command_Action();
+                command_Action.defaultLabel = "CommandFulfillTradeOffer".Translate();
+                command_Action.defaultDesc = "CommandFulfillTradeOfferDesc".Translate();
+                command_Action.icon = TradeCommandTex;
+                command_Action.action = delegate ()
+                {
+                    if (tradeRequest == null)
+                    {
+                        Log.Error("Attempted to fulfill an unavailable request", false);
+                        return;
+                    }
+
+                    WindowStack windowStack = Find.WindowStack;
+                    TaggedString text = "CommandFulfillTradeOfferConfirm".Translate(GenLabel.ThingLabel(tradeRequest.requestedThingDef, null, tradeRequest.requestedCount));
+
+                    windowStack.Add(Dialog_MessageBox.CreateConfirmation(text, delegate () { FulfillTradeRequest(); }, false, null));
+                };
+
+                if (!tradeRequest.CanFulfillRequest(tradeShip))
+                {
+                    command_Action.Disable("CommandFulfillTradeOfferFailInsufficient".Translate(TradeRequestUtility.RequestedThingLabel(tradeRequest.requestedThingDef, tradeRequest.requestedCount)));
+                }
+
+                yield return command_Action;
+            }
 
             if (Prefs.DevMode)
             {
@@ -247,5 +296,6 @@ namespace TraderShips
         }
 
         private static readonly Texture2D SendAwayTexture = ContentFinder<Texture2D>.Get("TraderShips/SendAway", true);
+        private static readonly Texture2D TradeCommandTex = ContentFinder<Texture2D>.Get("UI/Commands/FulfillTradeRequest", true);
     }
 }
