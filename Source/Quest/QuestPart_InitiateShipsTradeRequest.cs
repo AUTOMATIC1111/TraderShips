@@ -53,6 +53,8 @@ namespace TraderShips.Quest
         {
             if (thing.GetRotStage() != RotStage.Fresh) return false;
 
+            if (thing.IsForbidden(Faction.OfPlayer)) return false;
+
             Apparel apparel = thing as Apparel;
             if (apparel != null && apparel.WornByCorpse) return false;
 
@@ -80,12 +82,12 @@ namespace TraderShips.Quest
             if (pawn == null) return;
 
             int toSend = requestedCount;
-            foreach (Thing thing in tradeShip.ColonyThingsWillingToBuy(pawn).Where(x => x.def == requestedThingDef && PlayerCanGive(x)).ToList())
+            foreach (Thing thing in tradeShip.ColonyThingsWillingToBuy(pawn).Where(x => x.def == requestedThingDef && PlayerCanGive(x)).OrderBy(x => x.MarketValue).ToList())
             {
                 int count = Math.Min(thing.stackCount, toSend);
                 tradeShip.GiveSoldThingToTrader(thing, count, pawn);
 
-                toSend -= thing.stackCount;
+                toSend -= count;
                 if (toSend <= 0) break;
             }
         }
