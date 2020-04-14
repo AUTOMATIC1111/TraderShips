@@ -18,6 +18,11 @@
   <TraderShipsRequireCommssConsoleDesc>Ships won't come unless you have a comms console.</TraderShipsRequireCommssConsoleDesc>
   <TraderShipsEnableQuestsName>Enable quests</TraderShipsEnableQuestsName>
   <TraderShipsEnableQuestsDesc>Enable trade ship-related quests.</TraderShipsEnableQuestsDesc>
+  <TraderShipsSaturationName>Saturation range</TraderShipsSaturationName>
+  <TraderShipsSaturationDesc>Generated ships will have HSV color with saturation in specified range (also bound by [0,100]).</TraderShipsSaturationDesc>
+  <TraderShipsValueName>Value range</TraderShipsValueName>
+  <TraderShipsValueDesc>Generated ships will have HSV color with value in specified range (also bound by [0,100])</TraderShipsValueDesc>
+  <TraderShipsRerollColors>Reroll colors</TraderShipsRerollColors>
 
   <TraderShipsLandingZone>Landing zone</TraderShipsLandingZone>
   <TraderShipsLandingZoneExpandName>Expand landing zone</TraderShipsLandingZoneExpandName>
