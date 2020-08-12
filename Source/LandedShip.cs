@@ -63,15 +63,31 @@ namespace TraderShips
 
         public new IEnumerable<Thing> ColonyThingsWillingToBuy(Pawn playerNegotiator)
         {
+            HashSet<Thing> alreadyListed = new HashSet<Thing>();
+
             // technically, this is pawn selling things to itself, but the code doesn't seem to care, and
             // using this method instead of just listing all things allows for compatibility with storage
             // mods that patch Pawn_TraderTracker.ColonyThingsWillingToBuy.
             foreach (Thing thing in new Pawn_TraderTracker(playerNegotiator).ColonyThingsWillingToBuy(playerNegotiator))
             {
+                alreadyListed.Add(thing);
+
                 yield return thing;
+            }
+
+            foreach (Pawn pawn in TradeUtility.AllSellableColonyPawns(playerNegotiator.Map).Where(x => !x.Downed && ReachableForTrade(playerNegotiator, x)))
+            {
+                if(!alreadyListed.Contains(pawn))
+                    yield return pawn;
             }
 
             yield break;
         }
+
+        private bool ReachableForTrade(Pawn pawn, Thing thing)
+        {
+            return pawn.Map == thing.Map && pawn.Map.reachability.CanReach(pawn.Position, thing, PathEndMode.Touch, TraverseMode.PassDoors, Danger.Some);
+        }
+
     }
 }

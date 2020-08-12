@@ -16,17 +16,23 @@ namespace TraderShips.Quest
             base.Notify_QuestSignalReceived(signal);
             if (signal.tag != inSignal) return;
 
+            // fix for early versions saving ship as reference which results in it not loading
+            if(requester==null && Find.CurrentMap!=null)
+                requester = IncidentWorkerTraderShip.MakeTraderShip(Find.CurrentMap);
+
             CompShip comp = requester.TryGetComp<CompShip>();
             if (comp != null) comp.tradeRequest = this;
 
             IncidentWorkerTraderShip.LandShip(map, requester);
+
+            requester = null;
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref inSignal, "inSignal", null, false);
-            Scribe_References.Look(ref requester, "requester", false);
+            Scribe_Deep.Look(ref requester, "requester");
             Scribe_References.Look(ref map, "map", false);
             Scribe_Defs.Look(ref requestedThingDef, "requestedThingDef");
             Scribe_Values.Look(ref requestedCount, "requestedCount", 0, false);

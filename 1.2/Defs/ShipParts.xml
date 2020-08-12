@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <TraderShips.ShipSpritePartDef Name="ShipSpritePart" Abstract="True">
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>base_1</defName>
+        <category>base</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/base/1</texPath>
+            <drawSize>(349,178)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>base_2</defName>
+        <category>base</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/base/2</texPath>
+            <drawSize>(353,171)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>base_3</defName>
+        <category>base</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/base/3</texPath>
+            <drawSize>(427,167)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>base_4</defName>
+        <category>base</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/base/4</texPath>
+            <drawSize>(437,154)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>base_5</defName>
+        <category>base</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/base/5</texPath>
+            <drawSize>(343,221)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>base_a1</defName>
+        <category>base</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/base/a1</texPath>
+            <drawSize>(644,307)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>chassis_1</defName>
+        <category>chassis</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/chassis/1</texPath>
+            <drawSize>(440,144)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>chassis_2</defName>
+        <category>chassis</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/chassis/2</texPath>
+            <drawSize>(407,170)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>chassis_3</defName>
+        <category>chassis</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/chassis/3</texPath>
+            <drawSize>(444,131)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>chassis_4</defName>
+        <category>chassis</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/chassis/4</texPath>
+            <drawSize>(556,326)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_1</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/1</texPath>
+            <drawSize>(205,121)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_10</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/10</texPath>
+            <drawSize>(252,136)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_2</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/2</texPath>
+            <drawSize>(99,85)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_3</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/3</texPath>
+            <drawSize>(99,85)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_4</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/4</texPath>
+            <drawSize>(144,48)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_5</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/5</texPath>
+            <drawSize>(144,48)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_6</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/6</texPath>
+            <drawSize>(105,53)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_7</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/7</texPath>
+            <drawSize>(166,105)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_8</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/8</texPath>
+            <drawSize>(173,81)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_9</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/9</texPath>
+            <drawSize>(222,159)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_drone0</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/drone0</texPath>
+            <drawSize>(182,102)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_drone1</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/drone1</texPath>
+            <drawSize>(96,96)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_drone2</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/drone2</texPath>
+            <drawSize>(103,154)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_drone3</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/drone3</texPath>
+            <drawSize>(93,147)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_drone4</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/drone4</texPath>
+            <drawSize>(139,53)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>turbine_drone5</defName>
+        <category>turbine</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/turbine/drone5</texPath>
+            <drawSize>(211,109)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>weapon_1</defName>
+        <category>weapon</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/weapon/1</texPath>
+            <drawSize>(289,89)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>weapon_2</defName>
+        <category>weapon</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/weapon/2</texPath>
+            <drawSize>(201,46)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>weapon_3</defName>
+        <category>weapon</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/weapon/3</texPath>
+            <drawSize>(350,123)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+    <TraderShips.ShipSpritePartDef ParentName="ShipSpritePart">
+        <defName>weapon_4</defName>
+        <category>weapon</category>
+        <graphicData>
+            <texPath>TraderShips/Parts/weapon/4</texPath>
+            <drawSize>(208,88)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </TraderShips.ShipSpritePartDef>
+
+</Defs>

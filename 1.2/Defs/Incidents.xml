@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>TraderShipsArrival</defName>
+    <label>trader ship arrival</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>TraderShips.IncidentWorkerTraderShip</workerClass>
+    <category>OrbitalVisitor</category>
+    <baseChance>3</baseChance>
+    <requireColonistsPresent>True</requireColonistsPresent>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>TraderShipsCrash</defName>
+    <label>trader ship crash</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>TraderShips.IncidentWorkerTraderShipCrash</workerClass>
+    <category>Misc</category>
+    <baseChance>0.045</baseChance>
+  </IncidentDef>
+
+</Defs>
