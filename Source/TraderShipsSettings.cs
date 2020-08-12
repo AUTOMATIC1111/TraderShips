@@ -15,8 +15,8 @@ namespace TraderShips
         public bool colors = true;
         public bool requireCommsConsole = true;
         public bool enableQuests = true;
-        public IntRange shipColorSaturation;
-        public IntRange shipColorValue;
+        public IntRange shipColorSaturation = new IntRange(-50, 100);
+        public IntRange shipColorValue = new IntRange(50, 100);
 
         float[] colorHues = new float[100];
         float[] colorSaturations = new float[100];
@@ -35,8 +35,8 @@ namespace TraderShips
             Scribe_Values.Look(ref colors, "colors");
             Scribe_Values.Look(ref requireCommsConsole, "requireCommsConsole");
             Scribe_Values.Look(ref enableQuests, "enableQuests");
-            Scribe_Values.Look(ref shipColorSaturation, "shipColorSaturation", new IntRange(-50, 100));
-            Scribe_Values.Look(ref shipColorValue, "shipColorValue", new IntRange(50, 100));
+            Scribe_Values.Look(ref shipColorSaturation, "shipColorSaturation");
+            Scribe_Values.Look(ref shipColorValue, "shipColorValue");
         }
 
         public void DoSettingsWindowContents(Rect inRect)
