@@ -178,7 +178,7 @@ namespace TraderShips
                 {
                     if (tradeRequest == null)
                     {
-                        Log.Error("Attempted to fulfill an unavailable request", false);
+                        Log.Error("Attempted to fulfill an unavailable request");
                         return;
                     }
 
@@ -227,7 +227,7 @@ namespace TraderShips
         {
             if (!parent.Spawned)
             {
-                Log.Error("Tried to send " + parent + " away, but it's unspawned.", false);
+                Log.Error("Tried to send " + parent + " away, but it's unspawned.");
                 return;
             }
 
@@ -239,7 +239,7 @@ namespace TraderShips
             Skyfaller skyfaller = ThingMaker.MakeThing(Props.takeoffAnimation, null) as Skyfaller;
             if (!skyfaller.innerContainer.TryAdd(parent, true))
             {
-                Log.Error("Could not add " + parent.ToStringSafe<Thing>() + " to a skyfaller.", false);
+                Log.Error("Could not add " + parent.ToStringSafe<Thing>() + " to a skyfaller.");
                 parent.Destroy(DestroyMode.QuestLogic);
             }
 

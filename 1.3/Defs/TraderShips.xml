@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef Abstract="True" Name="TraderShipBuildingBase">
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <selectable>true</selectable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <statBases>
+      <SellPriceFactor>0.70</SellPriceFactor>
+    </statBases>
+    <blockWind>true</blockWind>
+
+    <passability>Impassable</passability>
+  </ThingDef>
+
+  <ThingDef ParentName="TraderShipBuildingBase">
+    <defName>TraderShipsShip</defName>
+    <description>A trader ship.</description>
+    <label>trader ship</label>
+
+    <graphicData>
+      <texPath>TraderShips/empty</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(4.1, 1.0, 1.8)</volume>
+        <offset>(0, 0, -0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>TraderShips/ship</uiIconPath>
+
+    <statBases>
+      <MaxHitPoints>4000</MaxHitPoints>
+      <Flammability>1</Flammability>
+    </statBases>
+
+    <killedLeavings>
+      <Steel>100</Steel>
+      <Plasteel>200</Plasteel>
+      <ComponentIndustrial>12</ComponentIndustrial>
+      <ComponentSpacer>4</ComponentSpacer>
+    </killedLeavings>
+
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>1.0</fillPercent>
+    
+    <tickerType>Normal</tickerType>
+    <size>(7,3)</size>
+    
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+
+    <rotatable>false</rotatable>
+    
+    <comps>
+      <li Class="TraderShips.CompPropertiesShip">
+        <shipgen>trader</shipgen>
+        <landAnimation>TraderShipsShipIncoming</landAnimation>
+        <takeoffAnimation>TraderShipsShipLeaving</takeoffAnimation>
+        <soundThud>TraderShipsSoundThud</soundThud>
+        
+        <crashScatterRadius>6</crashScatterRadius>
+        <crashScatterChunk>TraderShipsShipChunk</crashScatterChunk>
+        <crashScatterChunkCount>4~8</crashScatterChunkCount>
+        <crashPilotCount>1~3</crashPilotCount>
+        <crashPilotKind>TraderShipsTrader</crashPilotKind>
+      </li>
+    </comps>
+    
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <building>
+      <claimable>false</claimable>
+    </building>
+    
+  </ThingDef>
+
+</Defs>

@@ -55,7 +55,7 @@ namespace TraderShips
                         thing,
                         " at ",
                         playerNegotiator.Position
-                }), false);
+                }));
                 thing.Destroy(DestroyMode.Vanish);
             }
         }
