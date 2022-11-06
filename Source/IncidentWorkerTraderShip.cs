@@ -77,12 +77,15 @@ namespace TraderShips
                 }
             }
         }
-        public static Thing MakeTraderShip(Map map)
+        public static Thing MakeTraderShip(Map map, TraderKindDef traderKindDef = null)
         {
-            Thing ship = ThingMaker.MakeThing(Globals.TraderShipsShip, null);
-            TraderKindDef traderKindDef = (from x in DefDatabase<TraderKindDef>.AllDefs where CanSpawn(map, x) select x).RandomElementByWeightWithFallback((TraderKindDef traderDef) => traderDef.CalculatedCommonality);
+            if (traderKindDef == null)
+            {
+                traderKindDef = (from x in DefDatabase<TraderKindDef>.AllDefs where CanSpawn(map, x) select x).RandomElementByWeightWithFallback((TraderKindDef traderDef) => traderDef.CalculatedCommonality);
+            }
             if (traderKindDef == null) throw new InvalidOperationException();
 
+            Thing ship = ThingMaker.MakeThing(Globals.TraderShipsShip, null);
             CompShip comp = ship.TryGetComp<CompShip>();
             comp.GenerateInternalTradeShip(map, traderKindDef);
             return ship;
@@ -121,7 +124,7 @@ namespace TraderShips
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
             Map map = (Map)parms.target;
-            Thing ship = MakeTraderShip(map);
+            Thing ship = MakeTraderShip(map, parms.traderKind);
 
             LandShip(map, ship);
 
