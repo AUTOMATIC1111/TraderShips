@@ -1,0 +1,5 @@
+D:\RW\RimWorld.Biotech\RimWorld.Biotech\RimWorld.Biotech\Mods\TraderShips-master\Source\obj\Debug\TraderShips.csproj.AssemblyReference.cache
+D:\RW\RimWorld.Biotech\RimWorld.Biotech\RimWorld.Biotech\Mods\TraderShips-master\Source\obj\Debug\TraderShips.csproj.CoreCompileInputs.cache
+D:\RW\RimWorld.Biotech\RimWorld.Biotech\RimWorld.Biotech\Mods\TraderShips-master\1.4\Assemblies\TraderShips.dll
+D:\RW\RimWorld.Biotech\RimWorld.Biotech\RimWorld.Biotech\Mods\TraderShips-master\Source\obj\Debug\TraderShips.csproj.CopyComplete
+D:\RW\RimWorld.Biotech\RimWorld.Biotech\RimWorld.Biotech\Mods\TraderShips-master\Source\obj\Debug\TraderShips.dll
