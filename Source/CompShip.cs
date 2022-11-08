@@ -259,8 +259,15 @@ namespace TraderShips
             mustCrash = false;
             IntVec3 loc = parent.Position;
             Map map = parent.Map;
-
-            parent.Destroy(DestroyMode.KillFinalize);
+            if (TraderShips.settings.enableShipComponentDrops)
+            {
+                parent.Destroy(DestroyMode.Vanish);
+            }
+            else
+            {
+                parent.Destroy(DestroyMode.KillFinalize);
+            }
+            
 
             if (Props.crashScatterChunk != null)
             {
@@ -269,7 +276,7 @@ namespace TraderShips
                     GenSpawn.Spawn(Props.crashScatterChunk, RandomNearby(loc), map);
                 }
             }
-
+            
             if (Props.crashPilotKind != null)
             {
                 for (int i = 0; i < Props.crashPilotCount.RandomInRange; i++)
@@ -280,15 +287,18 @@ namespace TraderShips
                     if (!pawn.Dead) HealthUtility.DamageUntilDowned(pawn);
                 }
             }
-
+            
             foreach (Thing thing in tradeShip.Goods)
             {
-                GenPlace.TryPlaceThing(thing, RandomNearby(loc), map, ThingPlaceMode.Near);
-
-                Pawn pawn = thing as Pawn;
-                if (pawn != null)
+                thing.stackCount=(int)(thing.stackCount * TraderShips.settings.lootPercent/100);
+                if(thing.stackCount > 0)
                 {
-                    pawn.TakeDamage(new DamageInfo(DamageDefOf.Bomb, 250, 0, -1, parent));
+                    GenPlace.TryPlaceThing(thing, RandomNearby(loc), map, ThingPlaceMode.Near);
+                    Pawn pawn = thing as Pawn;
+                    if (pawn != null)
+                    {
+                        pawn.TakeDamage(new DamageInfo(DamageDefOf.Bomb, 250, 0, -1, parent));
+                    }
                 }
             }
 

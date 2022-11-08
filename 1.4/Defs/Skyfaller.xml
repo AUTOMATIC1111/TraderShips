@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Abstract="True" Name="TraderShipSkyfaller">
+    <category>Ethereal</category>
+    <useHitPoints>false</useHitPoints>
+    <thingClass>TraderShips.SkyfallerTradeShip</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    
+    <size>(7,3)</size>
+    
+    <graphicData>
+      <texPath>TraderShips/empty</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    
+    <skyfaller>
+      <movementType>Decelerate</movementType>
+      <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+      <shadowSize>(6.5,2.5)</shadowSize>
+      <motesPerCell>1</motesPerCell>
+    </skyfaller>
+  </ThingDef>
+  
+  <ThingDef ParentName="TraderShipSkyfaller">
+    <defName>TraderShipsShipIncoming</defName>
+    <label>trader ship (incoming)</label>
+    <skyfaller>
+      <anticipationSound>TraderShipsSoundLanding</anticipationSound>
+      <anticipationSoundTicks>160</anticipationSoundTicks>
+      <ticksToImpactRange>160</ticksToImpactRange>
+      <angleCurve>
+        <points>
+          <li>(0,-20)</li>
+          <li>(0.8,-40)</li>
+          <li>(1,0)</li>
+        </points>
+      </angleCurve>
+      <rotationCurve>
+        <points>
+          <li>(0,30)</li>
+          <li>(0.5,5)</li>
+          <li>(0.9,-5)</li>
+          <li>(0.95,0)</li>
+        </points>
+      </rotationCurve>
+      <zPositionCurve>
+        <points>
+          <li>(0.95,2.5)</li>
+          <li>(1,0)</li>
+        </points>
+      </zPositionCurve>
+      <speedCurve>
+        <points>
+          <li>(0.6,0.6)</li>
+          <li>(0.95,0.1)</li>
+        </points>
+      </speedCurve>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="TraderShipSkyfaller">
+    <defName>TraderShipsShipLeaving</defName>
+    <label>trader ship (leaving)</label>
+    <skyfaller>
+      <movementType>Accelerate</movementType>
+      <reversed>true</reversed>
+      <anticipationSound>TraderShipsSoundTakeoff</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange>-40~-15</ticksToImpactRange>
+      <moteSpawnTime>0.05</moteSpawnTime>
+      <angleCurve>
+        <points>
+          <li>(0,30)</li>
+          <li>(0.8,90)</li>
+          <li>(1,70)</li>
+        </points>
+      </angleCurve>
+      <rotationCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.15,10)</li>
+          <li>(0.5,-5)</li>
+        </points>
+      </rotationCurve>
+      <zPositionCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.08,2)</li>
+        </points>
+      </zPositionCurve>
+      <speedCurve>
+        <points>
+          <li>(0,0.2)</li>
+          <li>(0.4,0.7)</li>
+        </points>
+      </speedCurve>
+    </skyfaller>
+  </ThingDef>
+
+
+  <ThingDef ParentName="TraderShipSkyfaller">
+    <defName>TraderShipsShipCrashing</defName>
+    <label>trader ship (incoming)</label>
+    <skyfaller>
+      <movementType>Accelerate</movementType>
+      <anticipationSound>TraderShipsSoundCrash</anticipationSound>
+      <anticipationSoundTicks>60</anticipationSoundTicks>
+      <ticksToImpactRange>120</ticksToImpactRange>
+      
+      <explosionRadius>5</explosionRadius>
+      <explosionDamage>Bomb</explosionDamage>
+      <explosionDamageFactor>0.6</explosionDamageFactor>
+
+      <angleCurve>
+        <points>
+          <li>(0,-40)</li>
+          <li>(1,-40)</li>
+        </points>
+      </angleCurve>
+      <rotationCurve>
+        <points>
+          <li>(0,50)</li>
+          <li>(0.75,53)</li>
+          <li>(0.80,44)</li>
+          <li>(0.85,56)</li>
+          <li>(0.90,47)</li>
+          <li>(0.95,52)</li>
+          <li>(1,50)</li>
+        </points>
+      </rotationCurve>
+      <speedCurve>
+        <points>
+          <li>(0,0.6)</li>
+          <li>(1,1)</li>
+        </points>
+      </speedCurve>
+    </skyfaller>
+  </ThingDef>
+
+</Defs>

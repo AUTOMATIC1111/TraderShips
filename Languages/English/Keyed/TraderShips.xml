@@ -35,4 +35,13 @@
 
   <TraderShipsQuestRequestInfo>Requesting: {0} ({1})</TraderShipsQuestRequestInfo>
 
+  <TraderShipsChance>Orbital trader event chance</TraderShipsChance>
+  <TraderShipsChanceDesc>Changes the frequency of the Orbital trader event.</TraderShipsChanceDesc>
+  <TraderShipsCrashChance>Orbital trader crash event chance</TraderShipsCrashChance>
+  <TraderShipsCrashChanceDesc>Changes the frequency of the Orbital trader crash event.</TraderShipsCrashChanceDesc>
+  <TraderShipsCrashLoot>Orbital trader crash loot amount</TraderShipsCrashLoot>
+  <TraderShipsCrashLootDesc>Percentage of the items from the trader ship's inventory to be placed on the ground after a crash.</TraderShipsCrashLootDesc>
+  <TraderShipsCompDrop>Don't drop ship materials</TraderShipsCompDrop>
+  <TraderShipsCompDropDesc>If enabled, ships don't drop their materials (plasteel, components, etc.) when they crash. They still leave deconstructable ship chunks.</TraderShipsCompDropDesc>
+
 </LanguageData>
