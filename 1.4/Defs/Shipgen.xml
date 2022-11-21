@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+    <TraderShips.ShipgenDef>
+        <defName>trader</defName>
+        
+        <steps>
+            <li Class="TraderShips.StepAddPart">
+                <category>base</category>
+                <layer>0</layer>
+            </li>
+            <li Class="TraderShips.StepShipgen">
+                <shipgen>chassis</shipgen>
+                <offset>(-40,50)</offset>
+                <offsetVarianceX>-20~20</offsetVarianceX>
+                <offsetVarianceY>-20~20</offsetVarianceY>
+                <distance>25~45</distance>
+            </li>
+            <li Class="TraderShips.StepShipgen">
+                <shipgen>turbine</shipgen>
+                <offset>(-150,-30)</offset>
+                <offsetVarianceX>-20~20</offsetVarianceX>
+                <offsetVarianceY>-20~20</offsetVarianceY>
+                <distance>15~25</distance>
+            </li>
+        </steps>
+    </TraderShips.ShipgenDef>
+    
+    <TraderShips.ShipgenDef>
+        <defName>chassis</defName>
+        
+        <steps>
+            <li Class="TraderShips.StepAddPart">
+                <category>chassis</category>
+                <layer>100</layer>
+            </li>
+            <li Class="TraderShips.StepShipgen">
+                <shipgen>weapon</shipgen>
+                <offset>(90,20)</offset>
+                <chance>0.5</chance>
+            </li>
+        </steps>
+    </TraderShips.ShipgenDef>
+
+    <TraderShips.ShipgenDef>
+        <defName>weapon</defName>
+        
+        <steps>
+            <li Class="TraderShips.StepAddPart">
+                <category>weapon</category>
+                <layer>300</layer>
+            </li>
+        </steps>
+    </TraderShips.ShipgenDef>
+
+    <TraderShips.ShipgenDef>
+        <defName>turbine</defName>
+        
+        <steps>
+            <li Class="TraderShips.StepAddPart">
+                <category>turbine</category>
+                <layer>200</layer>
+                <angle>-30~10</angle>
+            </li>
+        </steps>
+    </TraderShips.ShipgenDef>
+
+</Defs>

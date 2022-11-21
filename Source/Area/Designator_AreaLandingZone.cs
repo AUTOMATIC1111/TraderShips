@@ -22,7 +22,7 @@ namespace TraderShips
         }
     }
 
-    public abstract class Designator_AreaLandingZone : Designator_Area
+    public abstract class Designator_AreaLandingZone : Designator_Cells
     {
         public override int DraggableDimensions => 2;
         public override bool DragDrawMeasurements => true;

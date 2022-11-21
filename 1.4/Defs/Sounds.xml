@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SoundDef Abstract="True" Name="TraderShipsSound">
+  </SoundDef>
+  
+  <SoundDef ParentName="TraderShipsSound">
+    <defName>TraderShipsSoundLanding</defName>  
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>TraderShips/Land</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>25~25</volumeRange>
+        <pitchRange>0.93~1.07</pitchRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+    
+    <priorityMode>PrioritizeNearest</priorityMode>
+  </SoundDef>
+  
+  <SoundDef ParentName="TraderShipsSound">
+    <defName>TraderShipsSoundTakeoff</defName>  
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>TraderShips/Takeoff</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>25~25</volumeRange>
+        <pitchRange>0.93~1.07</pitchRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+    
+    <priorityMode>PrioritizeNearest</priorityMode>
+  </SoundDef>
+  
+  
+
+  <SoundDef ParentName="TraderShipsSound">
+    <defName>TraderShipsSoundThud</defName>  
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>TraderShips/Thud</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>25~25</volumeRange>
+        <pitchRange>0.93~1.07</pitchRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+    
+    <priorityMode>PrioritizeNearest</priorityMode>
+  </SoundDef>
+
+  <SoundDef ParentName="TraderShipsSound">
+    <defName>TraderShipsSoundCrash</defName>  
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>TraderShips/Crash</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>10~12</volumeRange>
+        <pitchRange>0.93~1.07</pitchRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+    
+    <priorityMode>PrioritizeNearest</priorityMode>
+  </SoundDef>
+
+</Defs>
