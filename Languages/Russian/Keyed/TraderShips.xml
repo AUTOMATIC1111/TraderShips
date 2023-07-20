@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <TraderShipsTitle>Торговые корабли</TraderShipsTitle>
+  
+  <TraderShipsSendAway>Отослать корабль</TraderShipsSendAway>
+  <TraderShipsSendAwayDesc>Попросить торговца уйти.</TraderShipsSendAwayDesc>
+  <TraderShipsLeavingIn>Покинет местность через: {0}</TraderShipsLeavingIn>
+  <TraderShipsArrival>Рядом приземлился торговый корабль.\n\nОни известны как {0}. Они {1}.\n\n{2}</TraderShipsArrival>
+  <TraderShipsCrashName>Торговый корабль разбился</TraderShipsCrashName>
+  <TraderShipsCrash>Торговое судно, ранее известное как {0} разбилось неподалеку.\n\nОни были {1}.\n\nНекоторые из их запасов разбросаны не далеко от места крушения.</TraderShipsCrash>
+  <TraderShipsLeavingDueToDamage>{0} уходит из за повреждения корабля.</TraderShipsLeavingDueToDamage>
+  
+  <TraderShipsDisableOrbitalName>Отключить орбитальных торговцев</TraderShipsDisableOrbitalName>
+  <TraderShipsDisableOrbitalDesc>Отключит появление орбитальных торговцев (но торговые корабли из мода всё ещё будут прибывать, пока мод активен).</TraderShipsDisableOrbitalDesc>
+  <TraderShipsColorsName>Цветные корабли</TraderShipsColorsName>
+  <TraderShipsColorsDesc>Разрешить кораблям иметь разные раскраски.</TraderShipsColorsDesc>
+  <TraderShipsRequireCommssConsoleName>Требуется консоль связи</TraderShipsRequireCommssConsoleName>
+  <TraderShipsRequireCommssConsoleDesc>Торговые корабли не придут, если у вас нет функционирующей консоли связи.</TraderShipsRequireCommssConsoleDesc>
+  <TraderShipsEnableQuestsName>Включить задания</TraderShipsEnableQuestsName>
+  <TraderShipsEnableQuestsDesc>Включить поручения, связанные с торговыми кораблями.</TraderShipsEnableQuestsDesc>
+  <TraderShipsSaturationName>Диапазон насыщенности</TraderShipsSaturationName>
+  <TraderShipsSaturationDesc>Созданные корабли будут иметь цветовую модель HSV с насыщенностью в указанном диапазоне (также ограниченном [от 0 до 100]).</TraderShipsSaturationDesc>
+  <TraderShipsValueName>Диапазон значений</TraderShipsValueName>
+  <TraderShipsValueDesc>Созданные корабли будут иметь цветовую модель HSV с насыщенностью в указанном диапазоне (также ограниченном [от 0 до 100]).</TraderShipsValueDesc>
+  <TraderShipsRerollColors>Перевыбрать рандомные цвета</TraderShipsRerollColors>
+
+  <TraderShipsLandingZone>Зона посадки</TraderShipsLandingZone>
+  <TraderShipsLandingZoneExpandName>Расширить зону посадки</TraderShipsLandingZoneExpandName>
+  <TraderShipsLandingZoneExpandName>Расширить зону посадки</TraderShipsLandingZoneExpandName>
+  <TraderShipsLandingZoneExpandDesc>Создайте предпочтительную зону для посадки космических кораблей. Корабль попытается приземлиться в середине этой зоны, поэтому, если вам нужна большая посадочная площадка с несколькими кораблями на ней, обозначьте несколько непересекающихся зон.</TraderShipsLandingZoneExpandDesc>
+  <TraderShipsLandingZoneClearName>Убрать зону посадки</TraderShipsLandingZoneClearName>
+  <TraderShipsLandingZoneClearDesc>Удаление зоны посадки - космические корабли сами будут выбирать где им приземлиться.</TraderShipsLandingZoneClearDesc>
+
+  <TraderShipsLandingZoneBlocked>Космический корабль не смог приземлиться в зоне посадки: {0}.</TraderShipsLandingZoneBlocked>
+  <TraderShipsBlockedBy>Посадке мешает {0_label}</TraderShipsBlockedBy>
+
+  <TraderShipsQuestRequestInfo>Запрос: {0} ({1})</TraderShipsQuestRequestInfo>
+
+</LanguageData>
