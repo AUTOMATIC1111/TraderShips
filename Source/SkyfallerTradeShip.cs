@@ -27,7 +27,7 @@ namespace TraderShips
             }
         }
 
-        public override void DrawAt(Vector3 drawLoc, bool flip = false)
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             float pos = Traverse.Create(this).Property<float>("TimeInAnimation").Value;
 

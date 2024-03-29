@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <PawnKindDef>
+    <defName>TraderShipsTrader</defName>
+    <label>space trader</label>
+    <race>Human</race>
+    <combatPower>100</combatPower>
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
+    <apparelMoney>2000~3800</apparelMoney>
+    <apparelTags>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>SpacerMilitary</li>
+    </apparelTags>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <weaponMoney>500~800</weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <techHediffsMoney>2000~3000</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>0.7</techHediffsChance>
+    <techHediffsMaxAmount>4</techHediffsMaxAmount>
+    <initialResistanceRange>19~29</initialResistanceRange>
+    <initialWillRange>3~5</initialWillRange>
+  </PawnKindDef>
+
+</Defs>
