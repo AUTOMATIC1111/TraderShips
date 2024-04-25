@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <TraderShipsTitle>贸易飞船</TraderShipsTitle>
+  
+  <TraderShipsSendAway>送客</TraderShipsSendAway>
+  <TraderShipsSendAwayDesc>要求交易者离开。</TraderShipsSendAwayDesc>
+  <TraderShipsLeavingIn>离开期限: {0}</TraderShipsLeavingIn>
+  <TraderShipsArrival>一条贸易船在附近着陆了。\n\n他们被称为 {0}。 他们是 {1}。\n\n{2}</TraderShipsArrival>
+  <TraderShipsCrashName>贸易飞船已坠毁</TraderShipsCrashName>
+  <TraderShipsCrash>曾被称为 {0} 的贸易飞船在附近坠毁了。\n\n他们是 {1}。\n\n一些货物会散落在周围。</TraderShipsCrash>
+  <TraderShipsLeavingDueToDamage>{0} 因飞船受到伤害正在离开。</TraderShipsLeavingDueToDamage>
+  
+  <TraderShipsDisableOrbitalName>禁用轨道交易者</TraderShipsDisableOrbitalName>
+  <TraderShipsDisableOrbitalDesc>防止轨道交易者出现 (只要此mod处于激活状态，贸易飞船会继续出现)。</TraderShipsDisableOrbitalDesc>
+  <TraderShipsColorsName>彩色的飞船</TraderShipsColorsName>
+  <TraderShipsColorsDesc>允许飞船有不同的颜色。</TraderShipsColorsDesc>
+  <TraderShipsRequireCommssConsoleName>需要通讯终端</TraderShipsRequireCommssConsoleName>
+  <TraderShipsRequireCommssConsoleDesc>飞船在你没有通讯终端的时候不会来。</TraderShipsRequireCommssConsoleDesc>
+  <TraderShipsEnableQuestsName>启用任务</TraderShipsEnableQuestsName>
+  <TraderShipsEnableQuestsDesc>启用贸易飞船相关的任务。</TraderShipsEnableQuestsDesc>
+  <TraderShipsSaturationName>饱和度范围</TraderShipsSaturationName>
+  <TraderShipsSaturationDesc>生成的飞船的HSV色彩空间饱和度会在这个范围内 (有效数值 [0,100])。</TraderShipsSaturationDesc>
+  <TraderShipsValueName>明度范围</TraderShipsValueName>
+  <TraderShipsValueDesc>生成的飞船的HSV色彩空间明度会在这个范围内 (有效数值 [0,100])。</TraderShipsValueDesc>
+  <TraderShipsRerollColors>重新随机颜色</TraderShipsRerollColors>
+
+  <TraderShipsLandingZone>着陆区</TraderShipsLandingZone>
+  <TraderShipsLandingZoneExpandName>扩展着陆区</TraderShipsLandingZoneExpandName>
+  <TraderShipsLandingZoneExpandDesc>创建一个飞船的首选着陆区域。一条贸易飞船会尝试在区域中央着陆，因此如果你想要一个大型的可以降落复数飞船的着陆区，指定多个不相连的区域为着陆区。</TraderShipsLandingZoneExpandDesc>
+  <TraderShipsLandingZoneClearName>清除着陆区</TraderShipsLandingZoneClearName>
+  <TraderShipsLandingZoneClearDesc>移除着陆区，让飞船自行选择着陆区域。</TraderShipsLandingZoneClearDesc>
+
+  <TraderShipsLandingZoneBlocked>飞船无法在着陆区: {0} 着陆。</TraderShipsLandingZoneBlocked>
+  <TraderShipsBlockedBy>被 {0_label} 阻挡</TraderShipsBlockedBy>
+
+  <TraderShipsQuestRequestInfo>请求: {0} ({1})</TraderShipsQuestRequestInfo>
+
+</LanguageData>
